@@ -8,3 +8,19 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
+
+# The github-pages gem is currently forcing us onto a version of Jekyll <4.x.x, so we need to re-create the entire default exclusions object
+exclude:
+  - .vscode/
+
+  # Default exclusions:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
