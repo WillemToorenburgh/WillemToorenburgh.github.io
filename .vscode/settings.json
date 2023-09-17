@@ -1,0 +1,63 @@
+{
+  "liquid.engine": "jekyll",
+  // Following suggestions from https://talk.jekyllrb.com/t/jekyll-liquid-visual-studio-code/5531/3
+  "files.associations": {
+    "*.md": "liquid",
+    "*.markdown": "liquid",
+    "*.html": "liquid",
+    "*.liquid": "liquid",
+    "*.css": "liquid-css",
+    "*.scss": "liquid-scss",
+    "*.sass": "liquid-scss",
+    "*.js": "liquid-javascript"
+    // Below are configs that were auto-added when I wrote in the "files.associations" key
+    // "*.json.liquid": "json",
+    // "*.yaml.liquid": "yaml",
+    // "*.md.liquid": "markdown",
+    // "*.js.liquid": "liquid-javascript",
+    // "*.css.liquid": "liquid-css",
+    // "*.scss.liquid": "liquid-scss"
+  },
+  "vsicons.associations.files": [
+    {
+      "icon": "markdown",
+      "extensions": [
+        "md",
+        "markdown"
+      ]
+    },
+    {
+      "icon": "html",
+      "extensions": [
+        "html"
+      ]
+    },
+    {
+      "icon": "css",
+      "extensions": [
+        "css"
+      ]
+    },
+    {
+      "icon": "scss",
+      "extensions": [
+        "scss"
+      ]
+    },
+    {
+      "icon": "sass",
+      "extensions": [
+        "sass"
+      ]
+    }
+  ],
+  "emmet.includeLanguages": {
+    "liquid": "html",
+    "liquid-css": "css",
+    "liquid-scss": "scss"
+  },
+  "emmet.excludeLanguages": [
+    "markdown"
+  ],
+  "liquid.format.enable": true
+}
