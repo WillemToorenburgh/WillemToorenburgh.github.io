@@ -75,6 +75,8 @@ Also, using block comment because single line comment detection seems broken
 
 ...and just like that, the resume builds itself!
 
+Another thing I wanted was the ability to print the resume out to a PDF and have it look good.
+
 [neonoir]: https://www.youtube.com/watch?v=XwlNtOtQ--Q
 [ftl-rust-intro]: https://fasterthanli.me/series/building-a-rust-service-with-nix
 [my-rust-garbage]: https://github.com/WillemToorenburgh/rust-explore
