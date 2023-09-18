@@ -1,13 +1,24 @@
-lsi: false
-safe: true
-# source: [your repo's top level directory]
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+collections:
+  authors:
+    output: true
+  experience:
+  education:
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 
 # The github-pages gem is currently forcing us onto a version of Jekyll <4.x.x, so we need to re-create the entire default exclusions object
 exclude:
@@ -25,3 +36,15 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Github's recommended Jekyll settings for using Github Pages
+lsi: false
+safe: true
+# source: [your repo's top level directory]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge

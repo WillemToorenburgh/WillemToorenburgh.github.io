@@ -1,9 +1,7 @@
 ---
-layout: post
-author: Willem
+author: willem
+title: Setting up a personal resume website with Jekyll and WSL
 ---
-
-# Setting up a personal resume website with Jekyll and WSL
 
 When I was informed I would be on working notice, I figured now is as good a time as any to look at migrating from a standard resume document to a website. It'd be more befitting of my line of work, and help establish _some_ kind of portfolio. That's an element I've been sorely lacking from my professional repertoire, with all my previous work being in private organizations. It wouldn't really look very appealing to anyone if the site didn't have any content, so I'm also going to be taking notes as I go through the process of figuring this thing out, which will become my first post on the site (that isn't the resume, of course).
 
