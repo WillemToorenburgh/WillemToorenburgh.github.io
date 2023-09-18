@@ -4,7 +4,6 @@ title: Setting up a personal resume website with Jekyll and WSL
 ---
 
 When I was informed I would be on working notice, I figured now is as good a time as any to look at migrating from a standard resume document to a website. It'd be more befitting of my line of work, and help establish _some_ kind of portfolio. That's an element I've been sorely lacking from my professional repertoire, with all my previous work being in private organizations. It wouldn't really look very appealing to anyone if the site didn't have any content, so I'm also going to be taking notes as I go through the process of figuring this thing out, which will become my first post on the site (that isn't the resume, of course).
-
 Music mood during development: synthwave + saxophone - [Neo Noir by Alex Boychuk][neonoir]
 
 ## Choosing the tech stack
@@ -29,6 +28,52 @@ I was getting pretty tired of hitting up on my keyboard to find the right Jekyll
 ## Following the tutorial
 
 Eh, nothing really interesting happening at this point. I'll come back when I start writing my resume in here.
+
+## Writing the resume functionality
+
+One of the main outcomes I wanted from this was a resume that would format itself. I would just have to write a bit of content, and the engine would take care of the rest. No more `Willem Toorenburgh Resume 2023.rtf`! No more fussing with replicating formatting and dealing with copy-pasta!
+
+In service of this, it made the most sense to turn most sections of my resume into Jekyll _collections_. Give them some well-known metadata in the front matter:
+
+{% highlight yaml linenos %}
+company:
+  name: Blackbird Interactive
+  location: Vancouver, BC
+position: Senior Platform Engineer
+dates:
+  start: 2021-09-20
+{% endhighlight %}
+
+...and a little creative rendering logic:
+
+{% highlight liquid linenos %}
+{% raw %}
+{% comment -%}
+TODO: remove this silly assign once we're on Jekyll 4
+Also, using block comment because single line comment detection seems broken
+{% endcomment -%}
+{% assign experience_by_date = site.experience | sort: "dates.start" | reverse -%}
+{% for experience in experience_by_date %}
+  <li>
+    <h3>
+      <em>{{ experience.position }}</em>
+      at {{ experience.company.name }}
+    </h3>
+    {{ experience.dates.start | date: '%B, %Y' }} -
+    {% if experience.dates.end %}
+      {{ experience.dates.end | date: '%B, %Y' }}
+    {% else %}
+      Present
+    {% endif %}
+    | {{ experience.company.location }}
+    <br>
+    {{ experience.content }}
+  </li>
+{% endfor %}
+{% endraw %}
+{% endhighlight %}
+
+...and just like that, the resume builds itself!
 
 [neonoir]: https://www.youtube.com/watch?v=XwlNtOtQ--Q
 [ftl-rust-intro]: https://fasterthanli.me/series/building-a-rust-service-with-nix

@@ -59,6 +59,5 @@
   "emmet.excludeLanguages": [
     "markdown"
   ],
-  "liquid.format.enable": true,
-  "diffEditor.experimental.showMoves": false
+  "liquid.format.enable": true
 }

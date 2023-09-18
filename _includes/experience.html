@@ -1,0 +1,22 @@
+{% comment -%}
+TODO: remove this silly assign once we're on Jekyll 4
+Also, using block comment because single line comment detection seems broken
+{% endcomment -%}
+{% assign experience_by_date = site.experience | sort: "dates.start" | reverse -%}
+{% for experience in experience_by_date %}
+  <li>
+    <h3>
+      <em>{{ experience.position }}</em>
+      at {{ experience.company.name }}
+    </h3>
+    {{ experience.dates.start | date: '%B, %Y' }} -
+    {% if experience.dates.end %}
+      {{ experience.dates.end | date: '%B, %Y' }}
+    {% else %}
+      Present
+    {% endif %}
+    | {{ experience.company.location }}
+    <br>
+    {{ experience.content }}
+  </li>
+{% endfor %}

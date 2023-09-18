@@ -1,0 +1,25 @@
+management:
+  - Mentorship
+concepts:
+  - CI/CD
+  - Web application architecture
+  - Security and compliance
+game-engines:
+  - Unreal
+  - Unity
+languages:
+  - Powershell
+  - C#
+clouds:
+  - Azure
+  - AWS
+  - Digital Ocean
+source-control:
+  - Git
+  - Perforce
+automation:
+  - Pulumi
+  - Azure DevOps
+  - Github Actions
+  - Jenkins
+  - Ansible
