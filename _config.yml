@@ -12,6 +12,7 @@ kramdown:
 # The github-pages gem is currently forcing us onto a version of Jekyll <4.x.x, so we need to re-create the entire default exclusions object
 exclude:
   - .vscode/
+  - .github/
 
   # Default exclusions:
   - .sass-cache/
