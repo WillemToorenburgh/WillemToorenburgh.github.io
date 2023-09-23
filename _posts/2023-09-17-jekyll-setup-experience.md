@@ -42,6 +42,10 @@ company:
 position: Senior Platform Engineer
 dates:
   start: 2021-09-20
+technologies:
+  - Powershell
+  - Azure DevOps Pipelines
+  - ...
 {% endhighlight %}
 
 ...and a little creative rendering logic:
@@ -49,25 +53,32 @@ dates:
 {% highlight liquid linenos %}
 {% raw %}
 {% comment -%}
-TODO: remove this silly assign once we're on Jekyll 4
+TODO: remove this assign once we're on Jekyll 4
 Also, using block comment because single line comment detection seems broken
 {% endcomment -%}
 {% assign experience_by_date = site.experience | sort: "dates.start" | reverse -%}
 {% for experience in experience_by_date %}
   <li>
     <h3>
-      <em>{{ experience.position }}</em>
-      at {{ experience.company.name }}
+      <p class="title-plus-company">
+        <em class="title">{{ experience.position }}</em>
+        at
+        <em class="company">{{ experience.company.name }}</em>
+      </p>
     </h3>
-    {{ experience.dates.start | date: '%B, %Y' }} -
-    {% if experience.dates.end %}
-      {{ experience.dates.end | date: '%B, %Y' }}
-    {% else %}
-      Present
-    {% endif %}
-    | {{ experience.company.location }}
+    <p class="job-duration-location">{{ experience.dates.start | date: '%B, %Y' }} -
+      {% if experience.dates.end %}
+        {{ experience.dates.end | date: '%B, %Y' }}
+      {% else %}
+        Present
+      {% endif %}
+      | {{ experience.company.location }}
+    </p>
     <br>
-    {{ experience.content }}
+    <p class="experience-body">{{ experience.content }}</p>
+    <br>
+    <p class="technologies">Technologies used: {{ experience.technologies | join: ', ' }}</p>
+    <hr>
   </li>
 {% endfor %}
 {% endraw %}
