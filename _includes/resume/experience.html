@@ -7,8 +7,10 @@ Also, using block comment because single line comment detection seems broken
   <li>
     <h3>
       <p class="title-plus-company">
-        <em>{{ experience.position }}</em>
-        at {{ experience.company.name }}</p>
+        <em class="title">{{ experience.position }}</em>
+        at
+        <em class="company">{{ experience.company.name }}</em>
+      </p>
     </h3>
     <p class="job-duration-location">{{ experience.dates.start | date: '%B, %Y' }} -
       {% if experience.dates.end %}
