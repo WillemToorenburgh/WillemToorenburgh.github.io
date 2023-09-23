@@ -1,29 +1,29 @@
-- category: management
+- category: Management
   skills:
     - Mentorship
-- category: concepts
+- category: Concepts
   skills:
     - CI/CD
     - Web application architecture
     - Security and compliance
-- category: game-engines
+- category: Game Engines
   skills:
     - Unreal
     - Unity
-- category: languages
+- category: Languages
   skills:
     - Powershell
     - C#
-- category: clouds
+- category: Clouds
   skills:
     - Azure
     - AWS
     - Digital Ocean
-- category: source-control
+- category: Source Control
   skills:
     - Git
     - Perforce
-- category: automation
+- category: Automation
   skills:
     - Pulumi
     - Azure DevOps
