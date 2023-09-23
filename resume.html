@@ -5,18 +5,7 @@ title: Willem Toorenburgh - Resume
 
 <div class="skills">
   <h2>Skills</h2>
-  <ul>
-    {% for skill_group in site.data.skills %}
-      <li>
-        <h3>{{ skill_group.category }}</h3>
-        <ul>
-          {% for skill in skill_group.skills %}
-            <li>{{ skill }}</li>
-          {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
-  </ul>
+  {% include resume/skills.html %}
 </div>
 
 <div class="experience">
