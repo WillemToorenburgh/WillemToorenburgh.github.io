@@ -6,17 +6,22 @@ Also, using block comment because single line comment detection seems broken
 {% for experience in experience_by_date %}
   <li>
     <h3>
-      <em>{{ experience.position }}</em>
-      at {{ experience.company.name }}
+      <p class="title-plus-company">
+        <em>{{ experience.position }}</em>
+        at {{ experience.company.name }}</p>
     </h3>
-    {{ experience.dates.start | date: '%B, %Y' }} -
-    {% if experience.dates.end %}
-      {{ experience.dates.end | date: '%B, %Y' }}
-    {% else %}
-      Present
-    {% endif %}
-    | {{ experience.company.location }}
+    <p class="job-duration-location">{{ experience.dates.start | date: '%B, %Y' }} -
+      {% if experience.dates.end %}
+        {{ experience.dates.end | date: '%B, %Y' }}
+      {% else %}
+        Present
+      {% endif %}
+      | {{ experience.company.location }}
+    </p>
     <br>
-    {{ experience.content }}
+    <p class="experience-body">{{ experience.content }}</p>
+    <br>
+    <p class="technologies">Technologies used: {{ experience.technologies | join: ', ' }}</p>
+    <hr>
   </li>
 {% endfor %}

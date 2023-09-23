@@ -6,6 +6,12 @@ position: Junior Systems Administrator
 dates:
   start: 2015-04-01
   end: 2016-07-01
+technologies:
+  - Powershell
+  - Bash
+  - Jenkins
+  - Perforce
+  - Unity
 ---
 
 * Managed the source control server, running Perforce, and the build system server, running Jenkins, for Unity game development.

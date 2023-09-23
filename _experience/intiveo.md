@@ -6,6 +6,16 @@ position: Systems Administrator
 dates:
   start: 2017-07-01
   end: 2021-09-17
+technologies:
+  - Powershell
+  - Ruby
+  - PHP
+  - Git
+  - Bitbucket Pipelines
+  - Datadog
+  - AWS
+  - Chef
+  - Terraform
 ---
 
 * Architected and managed AWS infrastructure for a web application totaling over $11k/month, adding automations and fault tolerance.
