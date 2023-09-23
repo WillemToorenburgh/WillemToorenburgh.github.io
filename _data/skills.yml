@@ -1,25 +1,32 @@
-management:
-  - Mentorship
-concepts:
-  - CI/CD
-  - Web application architecture
-  - Security and compliance
-game-engines:
-  - Unreal
-  - Unity
-languages:
-  - Powershell
-  - C#
-clouds:
-  - Azure
-  - AWS
-  - Digital Ocean
-source-control:
-  - Git
-  - Perforce
-automation:
-  - Pulumi
-  - Azure DevOps
-  - Github Actions
-  - Jenkins
-  - Ansible
+- category: management
+  skills:
+    - Mentorship
+- category: concepts
+  skills:
+    - CI/CD
+    - Web application architecture
+    - Security and compliance
+- category: game-engines
+  skills:
+    - Unreal
+    - Unity
+- category: languages
+  skills:
+    - Powershell
+    - C#
+- category: clouds
+  skills:
+    - Azure
+    - AWS
+    - Digital Ocean
+- category: source-control
+  skills:
+    - Git
+    - Perforce
+- category: automation
+  skills:
+    - Pulumi
+    - Azure DevOps
+    - Github Actions
+    - Jenkins
+    - Ansible

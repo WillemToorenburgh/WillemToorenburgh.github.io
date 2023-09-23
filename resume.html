@@ -1,8 +1,31 @@
 ---
 title: Willem Toorenburgh - Resume
 ---
+<div class="info"></div>
 
-<h2>experience</h2>
-<ul>
-  {% include experience.html %}
-</ul>
+<div class="skills">
+  <h2>Skills</h2>
+  <ul>
+    {% for skill_group in site.data.skills %}
+      <li>
+        <h3>{{ skill_group.category }}</h3>
+        <ul>
+          {% for skill in skill_group.skills %}
+            <li>{{ skill }}</li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="experience">
+  <h2>Experience</h2>
+  <ul>
+    {% include resume/experience.html %}
+  </ul>
+</div>
+
+<div class="education"></div>
+
+<div class="references"></div>
