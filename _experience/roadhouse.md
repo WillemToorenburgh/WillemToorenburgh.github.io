@@ -22,5 +22,6 @@ technologies:
 
 Shipped:
 
+* Redbull: Air Race
 * Redbull Bike: Unchained
 * Iron Maiden: Legacy of the Beast
