@@ -30,8 +30,8 @@ body {
   //                     | -> entire sidebar
   //                     v   v -> main
   grid-template-columns: 1fr 5fr;
-  column-gap: 2%;
-  row-gap: 2%;
+  column-gap: 1rem;
+  row-gap: 1rem;
 
   grid-template-areas:
     ".       main"
@@ -60,13 +60,13 @@ nav {
   max-width: 5%;
   min-height: min-content;
   max-height: 100%;
-  padding-left: 10px;
+  padding-left: 1rem;
   display: flex;
   flex-flow: column;
 }
 
 nav ul {
-  padding-left: 1em;
+  padding-left: 1rem;
   list-style-type: none;
   line-height: 1.5;
 }
