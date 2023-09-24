@@ -1,7 +1,7 @@
 <ul>
   {% for skill_group in site.data.skills %}
     <li>
-      <h3>{{ skill_group.category }}</h3>
+      <h4>{{ skill_group.category }}</h4>
       <ul>
         {% for skill in skill_group.skills %}
           <li>{{ skill }}</li>

@@ -1,6 +1,6 @@
 ---
 ---
 @import
-  "main",
+"{{ site.theme }}",
+  "main";
   /* TODO: theming */
-  "{{ site.theme }}";

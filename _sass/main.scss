@@ -1,3 +1,92 @@
-.current {
-  color: green;
+// Settings for our static-sidebar-scrollable-main style layout
+* {
+  // Prevent browsers from adding padding, borders, etc to the size calculations of our elements
+  box-sizing: border-box;
+}
+
+html {
+  // Remove browser-default padding and margins
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  // Basic sizing
+  height: 100vh;
+  // This was causing extra scrollbars to show up. We can trust the browser to set width for us
+  // width: 100vw;
+  // Remove browser-default padding and margins
+  margin: 0;
+  padding: 0;
+
+  // Grid settings!
+  display: grid;
+  //                  | -> . (padding)
+  //                  |   | -> info
+  //                  |   |   | -> sidebar
+  //                  |   |   |   | -> . (padding)
+  //                  v   v   v   v   v -> footer
+  grid-template-rows: 1fr 4fr 2fr 5fr 1fr;
+  //                     | -> entire sidebar
+  //                     v   v -> main
+  grid-template-columns: 1fr 5fr;
+  column-gap: 2%;
+  row-gap: 2%;
+
+  grid-template-areas:
+    ".       main"
+    "info    main"
+    "sidebar main"
+    ".       main"
+    "footer  main";
+}
+
+.grid-cell {
+
+}
+
+// Displays the about me info
+header {
+  grid-area: info;
+  align-self: center;
+  min-height: min-content;
+  max-height: 100%;
+}
+
+nav {
+  grid-area: sidebar;
+  align-self: center;
+  min-width: min-content;
+  max-width: 5%;
+  min-height: min-content;
+  max-height: 100%;
+  padding-left: 10px;
+  display: flex;
+  flex-flow: column;
+}
+
+nav ul {
+  padding-left: 1em;
+  list-style-type: none;
+  line-height: 1.5;
+}
+
+// nav ul :hover {
+//   list-style-type: "⇒ ";
+// }
+
+nav a {
+  // margin: 5pt 10pt;
+}
+
+// This turns the main element into our scrollable content area
+main {
+  grid-area: main;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
 }

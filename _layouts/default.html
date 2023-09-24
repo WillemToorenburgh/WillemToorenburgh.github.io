@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} - Willem Toorenburgh</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
+    {% include info.html %}
     {% include navigation.html %}
-    {{ content }}<!-- TODO: make up footer -->
-    {% comment %}
+    <main class="grid-cell">
+      {{ content }}
+    </main>
     {% include footer.html %}
-    {% endcomment %}</body>
+  </body>
 </html>

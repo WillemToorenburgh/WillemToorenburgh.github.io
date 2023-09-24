@@ -4,26 +4,30 @@ Also, using block comment because single line comment detection seems broken
 {% endcomment -%}
 {% assign experience_by_date = site.experience | sort: "dates.start" | reverse -%}
 {% for experience in experience_by_date %}
-  <li>
-    <h3>
-      <p class="title-plus-company">
-        <em class="title">{{ experience.position }}</em>
-        at
-        <em class="company">{{ experience.company.name }}</em>
+  <ul>
+    <li>
+      <h3>
+        <p class="title-plus-company">
+          <em class="title">{{ experience.position }}</em>
+          at
+          <em class="company">{{ experience.company.name }}</em>
+        </p>
+      </h3>
+      <p class="job-duration-location">
+        <time datetime="{{ experience.dates.start | date: '%Y-%m' }}">{{ experience.dates.start | date: '%B, %Y' }}</time>
+        -
+        {% if experience.dates.end %}
+          <time datetime="{{ experience.dates.end | date: '%Y-%m' }}">{{ experience.dates.end | date: '%B, %Y' }}</time>
+        {% else %}
+          Present
+        {% endif %}
+        | {{ experience.company.location }}
       </p>
-    </h3>
-    <p class="job-duration-location">{{ experience.dates.start | date: '%B, %Y' }} -
-      {% if experience.dates.end %}
-        {{ experience.dates.end | date: '%B, %Y' }}
-      {% else %}
-        Present
-      {% endif %}
-      | {{ experience.company.location }}
-    </p>
-    <br>
-    <p class="experience-body">{{ experience.content }}</p>
-    <br>
-    <p class="technologies">Technologies used: {{ experience.technologies | join: ', ' }}</p>
-    <hr>
-  </li>
+      <br>
+      {{ experience.content }}
+      <br>
+      <p class="technologies">Technologies used: {{ experience.technologies | join: ', ' }}</p>
+      <hr>
+    </li>
+  </ul>
 {% endfor %}

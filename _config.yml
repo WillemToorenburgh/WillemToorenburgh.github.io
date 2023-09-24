@@ -20,7 +20,8 @@ defaults:
     values:
       layout: "default"
 
-permalink: pretty
+# Same as `pretty` but without the trailing slash
+permalink: /:categories/:year/:month/:day/:title
 
 # The github-pages gem is currently forcing us onto a version of Jekyll <4.x.x, so we need to re-create the entire default exclusions object
 exclude:
