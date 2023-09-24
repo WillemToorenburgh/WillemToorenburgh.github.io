@@ -1,6 +1,9 @@
-- category: Management
+- category: People
   skills:
     - Mentorship
+    - Reviews
+    - Policy development
+    - Support and escalation
 - category: Concepts
   skills:
     - CI/CD
@@ -13,7 +16,7 @@
 - category: Languages
   skills:
     - Powershell
-    - C#
+    - C# and .Net
 - category: Clouds
   skills:
     - Azure
