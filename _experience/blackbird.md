@@ -31,13 +31,13 @@ technologies:
 * Mentored multiple excellent co-ops
 * Served on the Diversity and Inclusion committee
 
-Shipped:
+#### Shipped:
 
 * Crossfire: Legion
 * Hardspace: Shipbreaker
 * Minecraft Legends
 
-Contributed:
+#### Contributed:
 
 * Earthless
 * Homeworld 3
