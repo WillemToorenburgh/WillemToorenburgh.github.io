@@ -15,8 +15,12 @@
   header {
     grid-area: main;
     ul {
-      a li {
-        width: auto;
+      margin: 10px 0;
+      a {
+        color: black;
+        li {
+          width: auto;
+        }
       }
     }
   
@@ -30,5 +34,6 @@
   main {
     height: auto;
     overflow: inherit;
+    padding: 0;
   }
 }

@@ -1,6 +1,10 @@
 // Get my favourite font
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
+.current {
+  color: green;
+}
+
 // Settings for our static-sidebar-scrollable-main style layout
 * {
   // Prevent browsers from adding padding, borders, etc to the size calculations of our elements
@@ -73,14 +77,11 @@ li {
 .sidebar ul {
   list-style-type: none;
   line-height: 1.5;
+  padding-left: 0;
 }
 
 header a .username {
   visibility: hidden;
-}
-
-.grid-cell {
-  // padding: 1rem;
 }
 
 .svg-icon {
@@ -92,8 +93,8 @@ header a .username {
   vertical-align: text-top;
 }
 
-.sidebar ul {
-  padding-left: 0;
+ul {
+  margin-top: 0;
 }
 
 // Displays the about me info
@@ -107,6 +108,7 @@ header {
   ul {
     white-space: nowrap;
     display: flex;
+    margin-top: 10px;
     a li {
       width: 25px;
     }
