@@ -1,0 +1,40 @@
+@media print {
+  // Arrange everything in one column
+  body {
+    padding: 15px;
+    display: block;
+    background-color: white;
+    color: black;
+  }
+
+  // Hide the nav and footer when printing
+  nav, footer {
+    visibility: hidden;
+    block-size: 0;
+  }
+
+  // Make social profile addresses visible
+  header {
+    ul {
+      margin: 10px 0;
+      a {
+        color: black;
+        li {
+          width: auto;
+        }
+      }
+    }
+  
+    a .username {
+      visibility: visible;
+      padding-right: 5px;
+    }
+  }
+
+  // Make sure all content is visible
+  main {
+    height: auto;
+    overflow: inherit;
+    padding: 0;
+  }
+}

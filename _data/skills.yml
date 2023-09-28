@@ -1,0 +1,36 @@
+- category: People
+  skills:
+    - Mentorship
+    - Code review
+    - Policy development
+    - Support and escalation
+- category: Concepts
+  skills:
+    - CI/CD
+    - Web application architecture
+    - Security and compliance
+- category: Game Engines
+  skills:
+    - Unreal
+    - Unity
+- category: Languages
+  skills:
+    - Powershell
+    - C# and .Net
+    - YAML
+- category: Clouds
+  skills:
+    - Azure
+    - AWS
+    - Digital Ocean
+- category: Source Control
+  skills:
+    - Git
+    - Perforce
+- category: Automation
+  skills:
+    - Pulumi
+    - Azure DevOps
+    - Github Actions
+    - Jenkins
+    - Ansible

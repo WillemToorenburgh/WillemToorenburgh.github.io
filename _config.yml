@@ -1,17 +1,44 @@
-lsi: false
-safe: true
-# source: [your repo's top level directory]
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+# yaml-language-server: $schema=http://json.schemastore.org/jekyll
+
+# TODO: Theming
+theme: minima
+
+# minima:
+#   social_links:
+github_username: WillemToorenburgh
+linkedin_username: willemtoorenburgh
+email: willemtoorenburgh@gmail.com
+
+sass:
+  sourcemap: development
+
+collections:
+  # TODO: maybe migrate off of github-pages gem, as custom sorting was added in Jekyll 4
+  education:
+    sort_by: dates.start
+  experience:
+    sort_by: dates.start
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      styles:
+        - path: /assets/css/blog
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Same as `pretty` but without the trailing slash
+permalink: /:categories/:year/:month/:day/:title
 
 # The github-pages gem is currently forcing us onto a version of Jekyll <4.x.x, so we need to re-create the entire default exclusions object
 exclude:
   - .vscode/
+  - .github/
 
   # Default exclusions:
   - .sass-cache/
@@ -24,3 +51,15 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Github's recommended Jekyll settings for using Github Pages
+lsi: false
+safe: true
+# source: [your repo's top level directory]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
