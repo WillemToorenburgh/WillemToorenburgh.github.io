@@ -1,3 +1,6 @@
+// Get my favourite font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 // Settings for our static-sidebar-scrollable-main style layout
 * {
   // Prevent browsers from adding padding, borders, etc to the size calculations of our elements
@@ -44,67 +47,36 @@ body {
     ". nav     main"
     ". .       main"
     ". footer  main";
+
+  font-family: Roboto, sans-serif;
+
 }
 
-@media only screen and (max-width: 768px) {
-  body {
-    // padding: 15px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 5fr 20px;
-    grid-template-areas:
-    "info nav"
-    "main main"
-    "footer footer"
-  }
+// Basic text styling
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
 
-  header {
-    padding: 10px;
+h1 {
+  font-size: x-large;
+}
 
-    h1 {
-      font-size: xx-large;
-    }
+a {
+  text-decoration: none;
+}
 
-    h6 {
-      font-size: medium;
-    }
-    .social-media-list {
-      margin-top: 5px;
-      margin-bottom: 0;
+li {
+  font-weight: lighter;
+}
 
-      a li {
-        font-size: 32px;
-        width: 32px;
-        margin-right: 20px;
+// Sidebar text styling
+.sidebar ul {
+  list-style-type: none;
+  line-height: 1.5;
+}
 
-        .svg-icon {
-          width: 32px;
-          height: 32px;
-        }
-      }
-    }
-  }
-
-  nav {
-    ul {
-      display: flex;
-      flex-flow: row;
-      justify-content: center;
-
-      li {
-        font-size: x-large;
-        padding-right: 20px;
-      }
-    }
-  }
-
-  // header, nav, footer {
-  //   grid-area: main;
-  // }
-
-  // main {
-  //   height: auto;
-  //   overflow: inherit;
-  // }
+header a .username {
+  visibility: hidden;
 }
 
 .grid-cell {
@@ -168,6 +140,10 @@ footer {
 }
 
 //// Resume-specific styling
+.skill-category {
+  white-space: nowrap;
+}
+
 .skills > ul {
   margin-left: 0;
   padding-left: 0;
@@ -184,6 +160,11 @@ footer {
 
 .skill-list {
   padding-left: 15px;
+  list-style-type: circle;
+}
+
+section ul {
+  padding-left: 10px;
 }
 
 //// Blog-specific styling
