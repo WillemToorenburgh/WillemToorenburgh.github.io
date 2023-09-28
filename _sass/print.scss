@@ -3,6 +3,8 @@
   body {
     padding: 15px;
     display: block;
+    background-color: white;
+    color: black;
   }
 
   // Hide the nav and footer when printing
@@ -13,7 +15,6 @@
 
   // Make social profile addresses visible
   header {
-    grid-area: main;
     ul {
       margin: 10px 0;
       a {
