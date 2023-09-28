@@ -59,5 +59,10 @@
   "emmet.excludeLanguages": [
     "markdown"
   ],
-  "liquid.format.enable": true
+  "liquid.format.enable": true,
+  "scss.lint.boxModel": "warning",
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.float": "warning",
+  "scss.lint.universalSelector": "warning",
+  "cSpell.enabled": true
 }
