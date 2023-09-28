@@ -9,6 +9,9 @@ github_username: WillemToorenburgh
 linkedin_username: willemtoorenburgh
 email: willemtoorenburgh@gmail.com
 
+# Adding this because it seems the github-pages and github-metadata gems are having a bad time
+repository: WillemToorenburgh/WillemToorenburgh.github.io
+
 sass:
   sourcemap: development
 
