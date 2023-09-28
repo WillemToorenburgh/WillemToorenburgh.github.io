@@ -64,5 +64,8 @@
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.float": "warning",
   "scss.lint.universalSelector": "warning",
-  "cSpell.enabled": true
+  "cSpell.enabled": true,
+  "cSpell.enableFiletypes": [
+    "liquid"
+  ]
 }
