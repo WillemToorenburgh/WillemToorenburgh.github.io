@@ -1,0 +1,49 @@
+// Global styling
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: x-large;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  font-weight: lighter;
+}
+
+// Sidebar styling
+
+.sidebar ul {
+  list-style-type: none;
+  line-height: 1.5;
+}
+
+header a .username {
+  visibility: hidden;
+  // display: contents;
+}
+
+// nav ul :hover {
+//   list-style-type: "⇒ ";
+// }
+
+// Main body styling
+
+//// Resume-specific styling
+.skill-category {
+  white-space: nowrap;
+}
+
+.skill-list {
+  list-style-type: circle;
+}

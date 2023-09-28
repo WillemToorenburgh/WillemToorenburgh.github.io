@@ -20,8 +20,16 @@ technologies:
   - Unreal Engine
 ---
 
-* Lead the Platform and Automation team
-* Coined the team name "Panda" 🐼
+* Led the Platform and Automation ("Panda") team
+* Inherited an esoteric build system using Perforce, Github, and Azure DevOps
+* Led support efforts for the team, distributing requests, handling escalations, and communicating with customers
+* Acted as liaison between the team and other project leadership in the studio
+* Architected a custom telemetry system
+  * Built on Azure Container Apps, Azure Event Hubs (Kafka), and Azure Blob Storage, as well as on-premesis servers
+  * Wrote Pulumi infrastructure-as-code for the stack
+* Self-taught C# and .Net, Pulumi, and many Azure components
+* Mentored multiple excellent co-ops
+* Served on the Diversity and Inclusion committee
 
 Shipped:
 
@@ -32,4 +40,5 @@ Shipped:
 Contributed:
 
 * Earthless
+* Homeworld 3
 * Several unannounced titles

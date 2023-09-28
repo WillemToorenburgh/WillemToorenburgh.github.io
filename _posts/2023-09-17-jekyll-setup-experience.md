@@ -1,10 +1,10 @@
 ---
-author: willem
 title: Setting up a personal resume website with Jekyll and WSL
 ---
 
-When I was informed I would be on working notice, I figured now is as good a time as any to look at migrating from a standard resume document to a website. It'd be more befitting of my line of work, and help establish _some_ kind of portfolio. That's an element I've been sorely lacking from my professional repertoire, with all my previous work being in private organizations. It wouldn't really look very appealing to anyone if the site didn't have any content, so I'm also going to be taking notes as I go through the process of figuring this thing out, which will become my first post on the site (that isn't the resume, of course).
+When Blackbird informed me that I would be on working notice, I figured now is as good a time as any to look at migrating from a standard resume document to a website. It'd be more befitting of my line of work, and help establish _some_ kind of portfolio. That's an element I've been sorely lacking from my professional repertoire, with all my previous work being in private organizations. It wouldn't really look very appealing to anyone if the site didn't have any content, so I'm also going to be taking notes as I go through the process of figuring this thing out, which will become my first post on the site (that isn't the resume, of course).
 Music mood during development: synthwave + saxophone - [Neo Noir by Alex Boychuk][neonoir]
+
 
 ## Choosing the tech stack
 
@@ -33,61 +33,66 @@ Eh, nothing really interesting happening at this point. I'll come back when I st
 
 One of the main outcomes I wanted from this was a resume that would format itself. I would just have to write a bit of content, and the engine would take care of the rest. No more `Willem Toorenburgh Resume 2023.rtf`! No more fussing with replicating formatting and dealing with copy-pasta!
 
-In service of this, it made the most sense to turn most sections of my resume into Jekyll _collections_. Give them some well-known metadata in the front matter:
-
-{% highlight yaml linenos %}
-company:
+In service of this, it made the most sense to turn most sections of my resume into Jekyll _collections_. Give them some well-known metadata in the front matter:{% highlight yaml linenos %}
+  company:
   name: Blackbird Interactive
-  location: Vancouver, BC
-position: Senior Platform Engineer
-dates:
-  start: 2021-09-20
-technologies:
-  - Powershell
-  - Azure DevOps Pipelines
-  - ...
-{% endhighlight %}
+      location: Vancouver, BC
+    position: Senior Platform Engineer
+    dates:
+      start: 2021-09-20
+    technologies:
+      - Powershell
+      - Azure DevOps Pipelines
+      - ...{% endhighlight %}
 
 ...and a little creative rendering logic:
 
 {% highlight liquid linenos %}
-{% raw %}
-{% comment -%}
-TODO: remove this assign once we're on Jekyll 4
-Also, using block comment because single line comment detection seems broken
-{% endcomment -%}
-{% assign experience_by_date = site.experience | sort: "dates.start" | reverse -%}
-{% for experience in experience_by_date %}
-  <li>
-    <h3>
-      <p class="title-plus-company">
-        <em class="title">{{ experience.position }}</em>
-        at
-        <em class="company">{{ experience.company.name }}</em>
-      </p>
-    </h3>
-    <p class="job-duration-location">{{ experience.dates.start | date: '%B, %Y' }} -
-      {% if experience.dates.end %}
-        {{ experience.dates.end | date: '%B, %Y' }}
-      {% else %}
-        Present
-      {% endif %}
-      | {{ experience.company.location }}
-    </p>
-    <br>
-    <p class="experience-body">{{ experience.content }}</p>
-    <br>
-    <p class="technologies">Technologies used: {{ experience.technologies | join: ', ' }}</p>
-    <hr>
-  </li>
-{% endfor %}
-{% endraw %}
+  {% raw %}
+    {% comment -%}
+    TODO: remove this assign once we're on Jekyll 4
+    Also, using block comment because single line comment detection seems broken
+    {% endcomment -%}
+    {% assign experience_by_date = site.experience | sort: "dates.start" | reverse -%}
+    {% for experience in experience_by_date %}
+      <ul>
+        <li>
+          <h3>
+            <p class="title-plus-company">
+              <em class="title">{{ experience.position }}</em>
+              at
+              <em class="company">{{ experience.company.name }}</em>
+            </p>
+          </h3>
+          <p class="job-duration-location">
+            <time datetime="{{ experience.dates.start | date: '%Y-%m' }}">{{ experience.dates.start | date: '%B, %Y' }}</time>
+            -
+            {% if experience.dates.end %}
+              <time datetime="{{ experience.dates.end | date: '%Y-%m' }}">{{ experience.dates.end | date: '%B, %Y' }}</time>
+            {% else %}
+              Present
+            {% endif %}
+            | {{ experience.company.location }}
+          </p>
+          <br>
+          {{ experience.content }}
+          <br>
+          <p class="technologies">Technologies used: {{ experience.technologies | join: ', ' }}</p>
+          <hr>
+        </li>
+      </ul>
+    {% endfor %}
+  {% endraw %}
 {% endhighlight %}
 
 ...and just like that, the resume builds itself!
+Next up was page layout. This meant diving into CSS, something I haven't done in quite a while. Thankfully, CSS has evolved significantly in the last 11 years: CSS grid seemed perfect for what I needed. Some research time later, and I was ready to give it a shot! The result was the layout you're reading this in now. Check out the grid view in the dev tools, if you like! I spent a good bit of time fussing with it, wondering why my changes weren't doing anything, until I realized I was fighting the Jekyll built-in theme. Lessons (re-)learned: CSS precedence is important, and make sure you disable all styling before trying your own!
 
-Another thing I wanted was the ability to print the resume out to a PDF and have it look good.
-
+ Another thing I wanted was the ability to print the resume out to a PDF and have it look good. The solution for this is actually quite straightforward: I can either use the `@media print` directive in CSS, _or_ I can make a dedicated `print.scss` and add `<link
+  rel="stylesheet"
+  media="print"
+  href="print.css">` to the head of the resume page. I decided to try the latter first, to try to keep my stylesheets at least a _bit_ organized.
+    
 [neonoir]: https://www.youtube.com/watch?v=XwlNtOtQ--Q
 [ftl-rust-intro]: https://fasterthanli.me/series/building-a-rust-service-with-nix
 [my-rust-garbage]: https://github.com/WillemToorenburgh/rust-explore

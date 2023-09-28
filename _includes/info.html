@@ -1,4 +1,39 @@
-<header class="grid-cell">
-  <h1>placeholder</h1>
-  <!-- TBD -->
+<header class="grid-cell sidebar">
+  <h1>Willem Toorenburgh</h1>
+  <h6>(Cloud | DevOps | Platform | Build) Engineer</h6>
+  <h6>
+    <i>He/him</i>
+  </h6>
+  <!-- uses Minima's class and SVGs -->
+  <!-- TODO: either use a different theme that fits this better, or extract the SVGs to use them without Minima -->
+  <ul class="social-media-list">
+    {%- if site.github_username -%}
+      <a title="GitHub" href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
+        <li>
+          <svg viewbox="0 0 16 16" class="svg-icon">
+            <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span class="username">{{ site.github_username | escape }}</span>
+        </li>
+      </a>
+    {%- endif -%}
+    {%- if site.linkedin_username -%}
+      <a title="LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">
+        <li>
+          <svg viewbox="0 0 16 16" class="svg-icon">
+            <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
+          </svg>
+          <span class="username">{{ site.linkedin_username | escape }}</span>
+        </li>
+      </a>
+    {%- endif -%}
+    {%- if site.email -%}
+      <a title="Email" href="mailto:{{ site.email | escape }}">
+        <li>
+          📧
+          <span class="username">{{ site.email }}</span>
+        </li>
+      </a>
+    {%- endif -%}
+  </ul>
 </header>

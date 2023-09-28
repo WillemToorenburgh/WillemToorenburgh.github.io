@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>{{ page.title }} - Willem Toorenburgh</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    {% if page.styles %}
+      {% for this_style in page.styles %}
+        <link
+          rel="stylesheet"
+          {{ this_style.attributes }}
+          href="{{ this_style.path }}.css">
+      {% endfor %}
+    {% else %}
+      <link rel="stylesheet" href="/assets/css/style.css">
+    {% endif %}
   </head>
   <body>
     {% include info.html %}

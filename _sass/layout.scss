@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+svg {
+  // Give SVGs space to breathe
+  box-sizing: content-box;
+}
+
 html {
   // Remove browser-default padding and margins
   margin: 0;
@@ -23,26 +28,100 @@ body {
   display: grid;
   //                  | -> . (padding)
   //                  |   | -> info
-  //                  |   |   | -> sidebar
+  //                  |   |   | -> nav
   //                  |   |   |   | -> . (padding)
   //                  v   v   v   v   v -> footer
   grid-template-rows: 1fr 4fr 2fr 5fr 1fr;
-  //                     | -> entire sidebar
+  //                     | -> puts padding on the left
+  //                     |   | -> entire sidebar
   //                     v   v -> main
-  grid-template-columns: 1fr 5fr;
-  column-gap: 1rem;
-  row-gap: 1rem;
+  grid-template-columns: 0fr 1fr 5fr;
+  gap: 1rem;
 
   grid-template-areas:
-    ".       main"
-    "info    main"
-    "sidebar main"
-    ".       main"
-    "footer  main";
+    ". .       main"
+    ". info    main"
+    ". nav     main"
+    ". .       main"
+    ". footer  main";
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    // padding: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr 20px;
+    grid-template-areas:
+    "info nav"
+    "main main"
+    "footer footer"
+  }
+
+  header {
+    padding: 10px;
+
+    h1 {
+      font-size: xx-large;
+    }
+
+    h6 {
+      font-size: medium;
+    }
+    .social-media-list {
+      margin-top: 5px;
+      margin-bottom: 0;
+
+      a li {
+        font-size: 32px;
+        width: 32px;
+        margin-right: 20px;
+
+        .svg-icon {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+
+      li {
+        font-size: x-large;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  // header, nav, footer {
+  //   grid-area: main;
+  // }
+
+  // main {
+  //   height: auto;
+  //   overflow: inherit;
+  // }
 }
 
 .grid-cell {
+  // padding: 1rem;
+}
 
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: #828282;
+  padding-right: 5px;
+  vertical-align: text-top;
+}
+
+.sidebar ul {
+  padding-left: 0;
 }
 
 // Displays the about me info
@@ -51,42 +130,63 @@ header {
   align-self: center;
   min-height: min-content;
   max-height: 100%;
+  min-width: min-content;
+
+  ul {
+    white-space: nowrap;
+    display: flex;
+    a li {
+      width: 25px;
+    }
+  }
+
+  a:hover .svg-icon {
+   fill: black;
+  }
 }
 
 nav {
-  grid-area: sidebar;
+  grid-area: nav;
   align-self: center;
   min-width: min-content;
-  max-width: 5%;
   min-height: min-content;
   max-height: 100%;
-  padding-left: 1rem;
-  display: flex;
-  flex-flow: column;
 }
 
-nav ul {
-  padding-left: 1rem;
-  list-style-type: none;
-  line-height: 1.5;
-}
-
-// nav ul :hover {
-//   list-style-type: "⇒ ";
-// }
-
-nav a {
-  // margin: 5pt 10pt;
-}
+// Main body styling
 
 // This turns the main element into our scrollable content area
 main {
   grid-area: main;
   height: 100%;
+  padding: 10px;
   overflow-y: scroll;
-  padding: 1rem;
 }
 
 footer {
   grid-area: footer;
+}
+
+//// Resume-specific styling
+.skills > ul {
+  margin-left: 0;
+  padding-left: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.skills > ul > li {
+  list-style-type: none;
+}
+
+.skill-list {
+  padding-left: 15px;
+}
+
+//// Blog-specific styling
+figure {
+  overflow-x: scroll;
 }

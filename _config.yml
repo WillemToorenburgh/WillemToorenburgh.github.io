@@ -1,6 +1,16 @@
 # yaml-language-server: $schema=http://json.schemastore.org/jekyll
 
 # TODO: Theming
+theme: minima
+
+# minima:
+#   social_links:
+github_username: WillemToorenburgh
+linkedin_username: willemtoorenburgh
+email: willemtoorenburgh@gmail.com
+
+sass:
+  sourcemap: development
 
 collections:
   # TODO: maybe migrate off of github-pages gem, as custom sorting was added in Jekyll 4
@@ -15,6 +25,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      styles:
+        - path: /assets/css/blog
   - scope:
       path: ""
     values:
