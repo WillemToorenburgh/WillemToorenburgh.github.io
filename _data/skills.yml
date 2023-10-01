@@ -9,6 +9,13 @@
     - CI/CD
     - Web application architecture
     - Security and compliance
+- category: Automation
+  skills:
+    - Pulumi
+    - Azure DevOps
+    - Github Actions
+    - Jenkins
+    - Ansible
 - category: Game Engines
   skills:
     - Unreal
@@ -27,10 +34,3 @@
   skills:
     - Git
     - Perforce
-- category: Automation
-  skills:
-    - Pulumi
-    - Azure DevOps
-    - Github Actions
-    - Jenkins
-    - Ansible

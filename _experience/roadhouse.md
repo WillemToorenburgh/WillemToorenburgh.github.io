@@ -20,7 +20,7 @@ technologies:
 * Worked with Windows Server 2008 r2 and 2012 r2 servers. Managed Active Directory, Group Policy, WSUS, and set up Windows Deployment Services, made images and task sequences with MDT, and configured the network for PXE booting target machines, as well as working with the Hyper-V server.
 * Supported Windows and Mac OS desktops and laptops, doing setup, and troubleshooting simple and complex problems, including onboarding.
 
-#### Shipped:
+##### Shipped:
 
 * Redbull: Air Race
 * Redbull Bike: Unchained
