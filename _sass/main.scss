@@ -1,29 +1,18 @@
 // Get my favourite font
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-.current {
-  color: green;
-}
-
 // Settings for our static-sidebar-scrollable-main style layout
-* {
-  // Prevent browsers from adding padding, borders, etc to the size calculations of our elements
-  box-sizing: border-box;
-}
-
-svg {
-  // Give SVGs space to breathe
-  box-sizing: content-box;
-}
 
 html {
   // Remove browser-default padding and margins
   margin: 0;
   padding: 0;
+  // Prevent browsers from adding padding, borders, etc to the size calculations of our elements
+  // box-sizing: border-box;
 }
 
+// Basic sizing
 body {
-  // Basic sizing
   height: 100vh;
   // This was causing extra scrollbars to show up. We can trust the browser to set width for us
   // width: 100vw;
@@ -43,7 +32,7 @@ body {
   //                     |   | -> entire sidebar
   //                     v   v -> main
   grid-template-columns: 0fr 1fr 5fr;
-  gap: 1rem;
+  gap: 12pt;
 
   grid-template-areas:
     ". .       main"
@@ -52,28 +41,70 @@ body {
     ". .       main"
     ". footer  main";
 
-  font-family: Roboto, sans-serif;
   background-color: whitesmoke;
   color: #333;
+  // We only want to show scroll bars on things we want to scroll
+  overflow: hidden;
+
+  // Baseline text settings
   line-height: 1.5;
+  font-family: Roboto, sans-serif;
+  font-size: 16pt;
 }
+
+//! Media queries can be found at the bottom for maximum precedence
 
 // Basic text styling
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
-}
-
-h1 {
-  font-size: x-large;
 }
 
 h6 {
   font-weight: lighter;
 }
 
+// Fancy link animations!
+
+$unvisited-link-color: green;
+$visited-link-color: darkgreen;
+
 a {
-  text-decoration: none;
+  color: inherit;
+
+  text-decoration-line: underline;
+  text-underline-offset: 5%;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: .1rem;
+  text-decoration-color: rgba($color: $unvisited-link-color, $alpha: 0.5);
+
+  transition-property:
+    text-decoration-thickness,
+    text-underline-offset,
+    text-decoration-color;
+
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
 }
+
+a:visited {
+  text-decoration-color: rgba($color: $visited-link-color, $alpha: 0.5);
+}
+
+a:hover {
+  text-decoration-thickness: .3rem;
+  text-underline-offset: 10%;
+  text-decoration-color: rgba($color: $unvisited-link-color, $alpha: 0.9);
+}
+
+a:visited:hover {
+  text-decoration-color: rgba($color: $visited-link-color, $alpha: 0.9);
+}
+
 
 // Sidebar text styling
 .sidebar ul {
@@ -83,11 +114,10 @@ a {
 }
 
 .svg-icon {
-  width: 16px;
-  height: 16px;
+  width: 1em;
+  height: 1em;
   display: inline-block;
   fill: #828282;
-  padding-right: 5px;
   vertical-align: text-top;
 }
 
@@ -101,11 +131,11 @@ header {
   align-self: center;
   min-height: min-content;
   max-height: 100%;
-  min-width: min-content;
+  // min-width: min-content;
 
   line-height: 1.3;
 
-  a .username {
+  .username {
     visibility: hidden;
   }
 
@@ -113,22 +143,46 @@ header {
     white-space: nowrap;
     display: flex;
     margin-top: 10px;
-    a li {
+
+    >a {
+      text-decoration: none !important;
+    }
+
+    li {
       width: 25px;
     }
   }
 
-  a:hover .svg-icon {
-   fill: black;
+  a:hover {
+    .svg-icon {
+      fill: black;
+
+      transition-property: fill;
+      transition-duration: 0.15s;
+      transition-timing-function: ease-out;
+    }
   }
+
 }
+
+svg {
+  // Give SVGs space to breathe
+  box-sizing: content-box;
+}
+
+// Navigation styling
 
 nav {
   grid-area: nav;
   align-self: center;
-  min-width: min-content;
   min-height: min-content;
   max-height: 100%;
+
+  a {
+    // Nav-specific link animation modifications
+    text-decoration-thickness: .1rem;
+  }
+
   ul {
     li {
       max-width: max-content;
@@ -142,8 +196,13 @@ nav {
 main {
   grid-area: main;
   height: 100%;
-  padding: 10px;
-  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#content-wrapper {
+  padding: 2rem;
+  padding-left: 2vw;
 }
 
 footer {
@@ -151,34 +210,143 @@ footer {
 }
 
 //// Resume-specific styling
+hr {
+  color: green;
+  border-width: .2rem;
+  border-style: solid;
+  border-radius: 0;
+}
+
 .skill-category {
   white-space: nowrap;
 }
 
-.skills > ul {
+.skills>ul {
   margin-left: 0;
   padding-left: 0;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 1rem;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
 }
 
-.skills > ul > li {
+.skills>ul>li {
   list-style-type: none;
 }
 
 .skill-list {
-  padding-left: 15px;
+  padding-left: 1.5rem;
   list-style-type: circle;
+  font-size: 1.2rem;
 }
 
-section ul {
-  padding-left: 10px;
+// Contains all experience items
+section {
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: lighter;
+  }
+
+  ul {
+    padding-left: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .title-plus-company {
+    font-weight: lighter;
+    .title, .company {
+      font-weight: bold;
+    }
+  }
 }
 
 //// Blog-specific styling
 figure {
   overflow-x: auto;
+}
+
+// Media queries
+//// Ultra-wide-ish
+@media screen and (min-width: 1200px) {
+  #content-wrapper {
+    max-width: 900px;
+  }
+}
+
+//// Mobile-ish
+@media screen and (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr 1em;
+    grid-template-areas:
+      "info nav"
+      "main main"
+      "footer footer"
+  }
+
+  header {
+    padding: 1vh;
+    padding-left: 5vw;
+
+    h1 {
+      // font-size: xx-large;
+    }
+
+    h6 {
+      // font-size: medium;
+    }
+
+    .social-media-list {
+      margin-top: 5px;
+      margin-bottom: 0;
+
+      a li {
+        font-size: 32px;
+        width: 32px;
+        margin-right: 20px;
+
+        .svg-icon {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      flex-flow: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li {
+        font-size: 2rem;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+//// Very small mobile
+@media screen and (max-width: 400px) {
+  html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  body {
+    height: auto;
+    display: block;
+    font-size: 12pt;
+  }
+  main {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
 }

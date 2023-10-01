@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }} - Willem Toorenburgh</title>
     {% if page.styles %}
       {% for this_style in page.styles %}
@@ -18,7 +19,9 @@
     {% include info.html %}
     {% include navigation.html %}
     <main class="grid-cell">
-      {{ content }}
+      <div id="content-wrapper">
+        {{ content }}
+      </div>
     </main>
     {% include footer.html %}
   </body>
