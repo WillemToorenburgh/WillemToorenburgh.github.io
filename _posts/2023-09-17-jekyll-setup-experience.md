@@ -37,7 +37,7 @@ In service of this, it made the most sense to turn most sections of my resume in
 
 {% highlight yaml linenos %}
 company:
-name: Blackbird Interactive
+  name: Blackbird Interactive
   location: Vancouver, BC
 position: Senior Platform Engineer
 dates:
@@ -85,7 +85,7 @@ Also, using block comment because single line comment detection seems broken
 
 Next up was page layout. This meant diving into CSS, something I haven't done in quite a while. Thankfully, CSS has evolved significantly in the last 11 years: CSS grid seemed perfect for what I needed. Some research time later, and I was ready to give it a shot! The result was the layout you're reading this in now. Check out the grid view in the dev tools, if you like! I spent a good bit of time fussing with it, wondering why my changes weren't doing anything, until I realized I was fighting the Jekyll built-in theme. Lessons (re-)learned: CSS precedence is important, and make sure you disable all styling before trying your own!
 
-In service of that, I ended up throwing out all built-in Jekyll theming. It was time to embrace the philosophy of the [Motherfucking][mf1] [websites][mf2] Sure, it may not look as good, and it definitely will take more effort, but I was losing so much time fighting to make my own changes stick that a blank canvas was preferable. Indeed, once I did so, I began making much more progress.
+In service of that, I ended up throwing out all built-in Jekyll theming. It was time to embrace the philosophy of the [Motherfucking][mf1] [websites][mf2]. Sure, it may not look as good, and it definitely will take more effort, but I was losing so much time fighting to make my own changes stick that a blank canvas was preferable. Indeed, once I did so, I began making much more progress.
 
 Another thing I wanted was the ability to print the resume out to a PDF and have it look good. The solution for this, thankfully, is quite straightforward: the `@media print` directive. I created a separate `print.scss` and got to rearranging. Another lesson learned: keep it simple. I tried to get fancy and use a bunch of different CSS grid directives, but it turns out that CSS is smarter than me. It only took a few rules to get the page into good form for print, though after much trial and error. *109 tabs* of trial and error. Same for formatting for mobile.
 
