@@ -219,10 +219,6 @@ hr {
   border-radius: 0;
 }
 
-.skill-category {
-  white-space: nowrap;
-}
-
 .skills>ul {
   margin-left: 0;
   padding-left: 0;
@@ -237,18 +233,19 @@ hr {
   list-style-type: none;
 }
 
+.skill-category {
+  white-space: nowrap;
+  font-size: 1.2rem;
+}
+
 .skill-list {
   padding-left: 1.5rem;
   list-style-type: circle;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 // Contains all experience items
 section {
-  h3 {
-    font-size: 1.6rem;
-  }
-
   h4 {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -257,7 +254,7 @@ section {
 
   ul {
     padding-left: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .title-plus-company {
