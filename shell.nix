@@ -10,5 +10,5 @@ with (import <nixpkgs> {}); let
 in
   mkShell {
     # name = "WillemToorenburgh.github.io";
-    buildInputs = [env];
+    buildInputs = [env env.wrappedRuby];
   }
