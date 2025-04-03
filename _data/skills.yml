@@ -7,24 +7,27 @@
 - category: Concepts
   skills:
     - CI/CD
+    - Integrations
     - Web application architecture
     - Security and compliance
 - category: Automation
   skills:
-    - Pulumi
     - Azure DevOps
-    - Github Actions
-    - Jenkins
     - Ansible
+    - TeamCity
+    - Pulumi
+    - Jenkins
 - category: Game Engines
   skills:
     - Unreal
     - Unity
+    - Godot
 - category: Languages
   skills:
     - Powershell
-    - C# and .Net
     - YAML
+    - C# and .Net
+    - Nix
 - category: Clouds
   skills:
     - Azure
@@ -34,3 +37,12 @@
   skills:
     - Git
     - Perforce
+- category: Business Tools
+  skills:
+    - Jira and Confluence
+    - Slack
+    - G Suite
+- category: Operating Systems
+  skills:
+    - Windows
+    - Linux

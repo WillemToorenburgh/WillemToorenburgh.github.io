@@ -67,5 +67,11 @@
   "cSpell.enabled": true,
   "cSpell.enableFiletypes": [
     "liquid"
-  ]
+  ],
+  "[liquid]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "sissel.shopify-liquid"
+  },
+  "nixEnvSelector.suggestion": false,
+  "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix"
 }
