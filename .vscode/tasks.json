@@ -4,20 +4,28 @@
     {
       "label": "Serve",
       "type": "shell",
+      "linux": {
+        "options": {"cwd": "${workspaceFolder}"},
+        "command": "nix-shell --run 'bundle exec jekyll serve --watch --livereload --force-polling --baseurl=\"\"'"
+      },
       "command": "bundle exec jekyll serve --watch --livereload --force-polling --baseurl=\"\"",
       "group": {
         "kind": "test",
         "isDefault": true
       },
       "isBackground": true,
-      "problemMatcher": ["$jekyll-error-watch", "$jekyll-warning-watch"]
+      // "problemMatcher": ["$jekyll-error-watch", "$jekyll-warning-watch"]
     },
     {
       "label": "Build",
       "type": "shell",
+      "linux": {
+        "options": {"cwd": "${workspaceFolder}"},
+        "command": "nix-shell --run 'bundle exec jekyll build'"
+      },
       "command": "bundle exec jekyll build",
       "group": "build",
-      "problemMatcher": ["$jekyll-error-watch", "$jekyll-warning-watch"]
+      // "problemMatcher": ["$jekyll-error-watch", "$jekyll-warning-watch"]
     }
   ]
 }
