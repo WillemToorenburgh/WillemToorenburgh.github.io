@@ -11,7 +11,7 @@ Music mood during development: synthwave + saxophone - [Neo Noir by Alex Boychuk
 I've had peripheral awareness of Jekyll for some time, so it was one of the first options I looked at when I started browsing around for static site generators. Simple, well supported, well established, great docs. I also looked at a few others, but I eliminated them for a few reasons:
 
 * Middleman: it looks very powerful, and that's the main reason I counted it out. If I chose something too complex, I know I'd get lost in the technical details all too quickly, and end up pouring hours into some tiny detail without getting any actual writing done. If I decide to do something more sophisticated with this site, I might come back to it.
-* Blazor WASM: I've _really_ wanted to play around with Blazor for quite some time now. It'd be a logical extension to the C# and dotNet I've been learning at Blackbird and in my personal time, and honestly, I just think it's neat. That said, it'd quite likely suffer from the same drawbacks as Middleman, not to mention that it doesn't really have any other niceties built-in for site generation like Jekyll or Middleman. I'd love to try it out in the future, perhaps by porting this site.
+* Blazor WASM: I've _really_ wanted to play around with Blazor for quite some time now. It'd be a logical extension to the C# and .Net I've been learning at Blackbird and in my personal time, and honestly, I just think it's neat. That said, it'd quite likely suffer from the same drawbacks as Middleman, not to mention that it doesn't really have any other niceties built-in for site generation like Jekyll or Middleman. I'd love to try it out in the future, perhaps by porting this site.
 
 I ran the subject by the BBI layoff support group, and Jekyll was endorsed over there, too. I used Ruby back when I worked at Intiveo (nee EasyMarkit) for AWS' very strange custom Chef implementation that they call OpsWorks Stacks, and I really quite liked it. Working with Ruby again, even a little, is a welcome proposition. I was sold!
 > 💭 Rather, _called_. Turns out they've just end-of-life'd the service. Shame, I thought it was genuinely an excellent platform for hosting complex traditional sites.
@@ -37,7 +37,7 @@ In service of this, it made the most sense to turn most sections of my resume in
 
 {% highlight yaml linenos %}
 company:
-name: Blackbird Interactive
+  name: Blackbird Interactive
   location: Vancouver, BC
 position: Senior Platform Engineer
 dates:
@@ -85,7 +85,7 @@ Also, using block comment because single line comment detection seems broken
 
 Next up was page layout. This meant diving into CSS, something I haven't done in quite a while. Thankfully, CSS has evolved significantly in the last 11 years: CSS grid seemed perfect for what I needed. Some research time later, and I was ready to give it a shot! The result was the layout you're reading this in now. Check out the grid view in the dev tools, if you like! I spent a good bit of time fussing with it, wondering why my changes weren't doing anything, until I realized I was fighting the Jekyll built-in theme. Lessons (re-)learned: CSS precedence is important, and make sure you disable all styling before trying your own!
 
-In service of that, I ended up throwing out all built-in Jekyll theming. It was time to embrace the philosophy of the [Motherfucking][mf1] [websites][mf2] Sure, it may not look as good, and it definitely will take more effort, but I was losing so much time fighting to make my own changes stick that a blank canvas was preferable. Indeed, once I did so, I began making much more progress.
+In service of that, I ended up throwing out all built-in Jekyll theming. It was time to embrace the philosophy of the [Motherfucking][mf1] [websites][mf2]. Sure, it may not look as good, and it definitely will take more effort, but I was losing so much time fighting to make my own changes stick that a blank canvas was preferable. Indeed, once I did so, I began making much more progress.
 
 Another thing I wanted was the ability to print the resume out to a PDF and have it look good. The solution for this, thankfully, is quite straightforward: the `@media print` directive. I created a separate `print.scss` and got to rearranging. Another lesson learned: keep it simple. I tried to get fancy and use a bunch of different CSS grid directives, but it turns out that CSS is smarter than me. It only took a few rules to get the page into good form for print, though after much trial and error. *109 tabs* of trial and error. Same for formatting for mobile.
 
